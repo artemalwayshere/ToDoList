@@ -9,34 +9,45 @@ namespace ToDoList.Data
 {
     public class Repository : IRepository
     {
-        void IRepository.CreateItem(ToDoItem item)
+        private readonly AppDbContext _appContext;
+
+        public Repository(AppDbContext context)
         {
-            throw new NotImplementedException();
+            _appContext = context;
         }
 
-        void IRepository.DeleteItem(int id)
+        public void CreateItem(ToDoItem item)
         {
-            throw new NotImplementedException();
+            _appContext.ToDoItems.Add(item);
         }
 
-        ToDoItem IRepository.GetItem(int id)
+        public void DeleteItem(int id)
         {
-            throw new NotImplementedException();
+            _appContext.Remove(GetItem(id));
         }
 
-        IEnumerable<ToDoItem> IRepository.GetItemList()
+        public ToDoItem GetItem(int id)
         {
-            throw new NotImplementedException();
+            return _appContext.ToDoItems.FirstOrDefault(item => item.Id == id);
         }
 
-        Task<bool> IRepository.SaveChangesAsync()
+        public IEnumerable<ToDoItem> GetItemList()
         {
-            throw new NotImplementedException();
+            return _appContext.ToDoItems.ToList();
         }
 
-        void IRepository.UpdateItem(ToDoItem item)
+        public void UpdateItem(ToDoItem item)
         {
-            throw new NotImplementedException();
+            _appContext.ToDoItems.Update(item);
+        }
+
+        public async Task<bool> SaveChangesAsync()
+        {
+            if (await _appContext.SaveChangesAsync() > 0)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
