@@ -6,7 +6,7 @@ using ToDoList.Models;
 
 namespace ToDoList.Data
 {
-    interface IRepository
+    public interface IRepository
     {
         IEnumerable<ToDoItem> GetItemList();
 

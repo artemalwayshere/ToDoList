@@ -1,0 +1,26 @@
+﻿@model List<ToDoList.Models.ToDoItem>
+
+@{
+
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+    <div class="list-item">
+        @foreach (var item in Model)
+        {
+            <ul>
+                <li>
+                    <a href="item-link" asp-action ="ToDoItem" asp-route-id="@item.Id">contetn</a>
+                    @item.Title
+                </li>
+            </ul>
+        }
+        </div>
+</head>
+
+
+
+
