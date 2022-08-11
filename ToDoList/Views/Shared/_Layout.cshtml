@@ -7,20 +7,12 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
-<div>
-    <ul>
-        <li>
-            <a href="item-link" asp-controller="ToDoItem" asp-action="CreateItem">
-            Добавить
-            </a>
-
-        </li>
-    </ul>
-    
-</div>
-<div>
-    @RenderBody()
-</div>
+    <div class="Main-title">
+        <h1>To-Do list</h1>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
 <body>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

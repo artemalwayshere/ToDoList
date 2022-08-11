@@ -10,25 +10,52 @@ namespace ToDoList.Controllers
 {
     public class ToDoItemController : Controller
     {
-        private IRepository _repo;
+        private readonly IRepository _repo;
 
         public ToDoItemController(IRepository repo)
         {
             _repo = repo;
         }
 
-        [HttpPost]
-        public IActionResult CreateItem(ToDoItem item)
+        public IActionResult ToDoItem(int id)
         {
-            _repo.CreateItem(item);
-            return View();
+            var responseItem = _repo.GetItem(id);
+            return View(responseItem);
         }
 
         [HttpGet]
-        public IActionResult GetItems()
+        public IActionResult CreateItem()
         {
-            var responseItem = _repo.GetItemList();
-            return View(responseItem);
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateItem(ToDoItem item)
+        {
+            var toDoitem = new ToDoItem
+            {
+                Id = item.Id,
+                Title = item.Title,
+                Description = item.Description
+            };
+
+            if (toDoitem.Id < 1)
+            {
+                _repo.CreateItem(toDoitem);
+            }
+            else
+            {
+
+            }
+
+            if (await _repo.SaveChangesAsync())
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                return View(toDoitem);
+            }
         }
     }
 }
