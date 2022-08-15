@@ -8,10 +8,10 @@
     <title></title>
 </head>
 <body>
-    <div class="add-item">
+    @*<div class="add-item">
         <a asp-controller="ToDoItem" asp-action="CreateItem">Добавит</a>
-    </div>
-    <div>
+    </div>*@
+    <div class="list_items">
         @foreach (var item in Model)
         {
             <ul>

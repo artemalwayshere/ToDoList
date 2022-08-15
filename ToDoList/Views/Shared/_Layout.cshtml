@@ -4,16 +4,29 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - ToDoList</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
 </head>
-    <div class="Main-title">
-        <h1>To-Do list</h1>
+<body>
+    <div class="block_title">
+        ToDo List
+    </div>
+    <div class="block_row">
+        <div class="block_column">
+            <div class="_block_item">Задачи на день</div>
+        </div>
+        <div class="block_column">
+            <div class="_block_item">Задачи на неделю</div>
+        </div>
+        <div class="block_column">
+            <div class="_block_item">Задачи на месяц</div>
+        </div>
     </div>
     <div>
         @RenderBody()
     </div>
-<body>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

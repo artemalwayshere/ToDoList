@@ -1,1 +1,49 @@
-﻿
+﻿body {
+    font-family: 'Open Sans', sans-serif;
+    background: rgb(175,6,94);
+    background: linear-gradient(45deg, rgba(175,6,94,1) 24%, rgba(67,9,121,1) 69%);
+    height: 950px;
+    margin: 2px;
+    padding: 2px;
+    
+}
+
+.block_title{
+    margin-left:40%;
+    margin-top: 60px;
+    color:white;
+    font-size: 90px;
+    width: 400px;
+    z-index:1;
+    position:relative;
+}
+
+.block_row {
+    margin-left: 300px;
+    margin-top: 30px;
+    width: 400px;
+    height: 600px;
+    display: flex;
+    flex-direction: Column;
+    z-index: 1;
+    position: relative;
+}
+
+.block_column {
+    color: white;
+    padding: 40px;
+    border: 2px solid;
+    border-color: white;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 30px;
+    position: relative;
+    margin-top: auto;
+    z-index: 1;
+    position: relative;
+}
+
+.list_items {
+    z-index: 2;
+    position: absolute;
+}
