@@ -7,7 +7,21 @@
 <head>
 </head>
 <body>
-    123
+    <div class="list_todo">
+        @foreach (var item in Model)
+        {
+            <table>
+                <tr>
+                    <td>@item.Title</td>
+                    <td>@item.DateTimeCreate</td>
+                    <td>@item.IsDone</td>
+                    <td>
+                        <a asp-controller="ToDoItem" asp-action="Remove" asp-route-id ="@item.Id">Удалить</a>
+                    </td>
+                </tr>
+            </table>
+        }
+    </div>
 </body>
 </html>
 

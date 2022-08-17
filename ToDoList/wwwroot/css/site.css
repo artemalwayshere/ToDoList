@@ -9,11 +9,41 @@
 }
 
 .block_title{
-    margin-left:40%;
+    margin-left:35%;
     margin-top: 40px;
     color:white;
     font-size: 90px;
     width: 400px;
     z-index:1;
     position:relative;
+}
+
+.form_input{
+    margin-left: 35%;
+    height: 40px;
+    width: 500px;
+    color: white;
+}
+
+.form_input input{
+    height: 30px;
+    width: 400px;
+}
+
+.btn_sbmt {
+    font-size:25px;
+    color:white;
+    background:none;
+    border: none;
+    cursor:pointer;
+    vertical-align:middle;
+}
+.list_todo{
+    margin-left:35%;
+    margin-top:40px;
+}
+table{
+    color:white;
+    border:1px solid;
+    width: 400px;
 }

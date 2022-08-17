@@ -1,11 +1,21 @@
 ﻿@model ToDoList.Models.ToDoItem
 
-<form asp-action="CreateItem" asp-controller="ToDoItem" method="post" enctype="multipart/form-data">
-    <div asp-validation-summary="All"></div>
-    <label asp-for="Title"></label>
-    <input asp-for="Id" type="hidden" />
-    <input asp-for="Title" />
-    <span asp-validation-for="Title"></span>
-    <input type="submit" id="form_btn" value="Добавить" />
-</form>
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <link href="~/css/All.css" rel="stylesheet" />
+        <link href="~/css/site.css" rel="stylesheet" />
+    </head>
+    <body>
+        <form class="form_input" asp-action="CreateItem" asp-controller="ToDoItem" method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="All"></div>
+            <input asp-for="Id" type="hidden" />
+            <input asp-for="Title" />
+            <span asp-validation-for="Title"></span>
+            <button class="btn_sbmt" type="submit">
+                <i class="fa-solid fa-plus"></i>
+            </button>
+        </form>
+    </body>
+    </html>
+
 

@@ -58,5 +58,12 @@ namespace ToDoList.Controllers
                 return View(toDoitem);
             }
         }
+
+        public async Task<IActionResult> Remove(int id)
+        {
+            _repo.DeleteItem(id);
+            await _repo.SaveChangesAsync();
+            return RedirectToAction("Index", "Home");
+        }
     }
 }
