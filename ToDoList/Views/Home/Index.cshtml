@@ -1,28 +1,13 @@
-﻿@model IEnumerable<ToDoList.Models.ToDoItem> 
+﻿@model IEnumerable<ToDoList.Models.ToDoItem>
 
 @{
-    ViewData["Title"] = "Home Page";
+    ViewBag.Title = "Home Page";
 }
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title></title>
 </head>
 <body>
-    @*<div class="add-item">
-        <a asp-controller="ToDoItem" asp-action="CreateItem">Добавит</a>
-    </div>*@
-    <div class="list_items">
-        @foreach (var item in Model)
-        {
-            <ul>
-                <li>
-                    <a asp-controller = "ToDoItem" asp-action="ToDoItem" asp-route-id="@item.Id">
-                        @item.Title
-                    </a>
-                </li>
-            </ul>
-        }
-    </div>
+    123
 </body>
 </html>
 

@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -13,23 +15,15 @@
     <div class="block_title">
         ToDo List
     </div>
-    <div class="block_row">
-        <div class="block_column">
-            <div class="_block_item">Задачи на день</div>
-        </div>
-        <div class="block_column">
-            <div class="_block_item">Задачи на неделю</div>
-        </div>
-        <div class="block_column">
-            <div class="_block_item">Задачи на месяц</div>
-        </div>
-    </div>
-    <div>
-        @RenderBody()
+    @await Html.PartialAsync("_CreateItem", new ToDoItem()) 
+    <div class="container">
+        <main>
+            @RenderBody()
+        </main>
     </div>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    @RenderSection("Scripts", required: false)
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
