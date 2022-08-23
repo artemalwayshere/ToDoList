@@ -65,5 +65,52 @@ namespace ToDoList.Controllers
             await _repo.SaveChangesAsync();
             return RedirectToAction("Index", "Home");
         }
+
+        public IActionResult UpdateItem(int? id)
+        {
+            if (id == null)
+            {
+                return View(new ToDoItem());
+            }
+            else
+            {
+                var item = _repo.GetItem((int)id);
+                return View(new ToDoItem
+                {
+                    Id = item.Id,
+                    Title = item.Title,
+                    DateTimeCreate = item.DateTimeCreate
+                });
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateItem(ToDoItem updItem)
+        {
+            var item = new ToDoItem
+            {
+                Id = updItem.Id,
+                Title = updItem.Title,
+                DateTimeCreate = updItem.DateTimeCreate,
+            };
+
+            if(item.Id > 0)
+            {
+                _repo.UpdateItem(item);
+            }
+            else
+            {
+                _repo.CreateItem(item);
+            }
+
+            if(await _repo.SaveChangesAsync())
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                return View(item);
+            }
+        }
     }
 }

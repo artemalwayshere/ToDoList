@@ -13,10 +13,12 @@
             <table>
                 <tr>
                     <td>@item.Title</td>
-                    <td>@item.DateTimeCreate</td>
+                    <td>@item.DateTimeCreate.ToString("MM/dd/yyyy")</td>
                     <td>@item.IsDone</td>
+                    <td>DeadLine @item.IsDone</td>
                     <td>
-                        <a asp-controller="ToDoItem" asp-action="Remove" asp-route-id ="@item.Id">Удалить</a>
+                        <a asp-controller="ToDoItem" asp-action="Remove" asp-route-id="@item.Id">Удалить</a>
+                        <a asp-controller="ToDoItem" asp-action="UpdateItem" asp-route-id="@item.Id">Изменить</a>
                     </td>
                 </tr>
             </table>
