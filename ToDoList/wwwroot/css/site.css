@@ -1,34 +1,42 @@
 ﻿body {
     font-family: 'Open Sans', sans-serif;
-    background: rgb(175,6,94);
-    background: linear-gradient(45deg, rgba(175,6,94,1) 24%, rgba(67,9,121,1) 69%);
-    height: 950px;
+    background: #757575;
     margin: 2px;
     padding: 2px;
     
 }
 
-.block_title{
-    margin-left:35%;
+.block_title {
     margin-top: 40px;
-    color:white;
+    color: white;
     font-size: 90px;
-    width: 400px;
-    z-index:1;
-    position:relative;
+    transform: translateX(35%);
+    z-index: 1;
+    
 }
 
 .form_input{
-    margin-left: 35%;
     height: 40px;
-    width: 500px;
+    transform: translateX(35%);
     color: white;
 }
 
-.form_input input{
-    height: 30px;
-    width: 400px;
+    .form_input input {
+        height: 30px;
+        width: 35%;
+    }
+
+.form_input_edit {
+    margin-top: 170px;
+    height: 40px;
+    transform: translateX(35%);
+    color: white;
 }
+
+    .form_input_edit input {
+        height: 40px;
+        width: 35%;
+    }
 
 .btn_sbmt {
     font-size:25px;
@@ -38,12 +46,41 @@
     cursor:pointer;
     vertical-align:middle;
 }
-.list_todo{
-    margin-left:35%;
-    margin-top:40px;
+
+.edit_btn_sbmt {
+    font-size: 25px;
+    color: #878787;
+    background: none;
+    border: none;
+    cursor: pointer;
+    vertical-align: middle;
 }
-table{
-    color:white;
-    border:1px solid;
-    width: 400px;
+
+.edit_btn_sbmt:hover {
+    color: green;
+    transition: color .2s linear;
+}
+
+.block-items {
+    margin: 30px 300px 300px 300px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.list-item {
+    border: 1px solid;
+    border-radius: 15px;
+    border-color: #313131;
+    height: 45px;
+    margin-top: 10px;
+    vertical-align: middle;
+}
+
+.item-field {
+    color: white;
+    
 }

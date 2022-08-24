@@ -9,7 +9,7 @@ namespace ToDoList.Data
 {
     public class Repository : IRepository
     {
-        private AppDbContext _appContext;
+        private readonly AppDbContext _appContext;
 
         public Repository(AppDbContext context)
         {

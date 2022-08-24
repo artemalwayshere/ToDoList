@@ -17,12 +17,6 @@ namespace ToDoList.Controllers
             _repo = repo;
         }
 
-        [HttpGet]
-        public IActionResult ToDoItem(int id)
-        {
-            var responseItem = _repo.GetItem(id);
-            return View(responseItem);
-        }
 
         [HttpGet]
         public IActionResult CreateItem()

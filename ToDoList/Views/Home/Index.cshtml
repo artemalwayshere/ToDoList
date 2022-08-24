@@ -1,27 +1,34 @@
 ﻿@model IEnumerable<ToDoList.Models.ToDoItem>
 
-@{
-    ViewBag.Title = "Home Page";
-}
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 </head>
 <body>
-    <div class="list_todo">
+    <div class="block-items">
         @foreach (var item in Model)
         {
-            <table>
-                <tr>
-                    <td>@item.Title</td>
-                    <td>@item.DateTimeCreate.ToString("MM/dd/yyyy")</td>
-                    <td>@item.IsDone</td>
-                    <td>DeadLine @item.IsDone</td>
-                    <td>
+            <div class="list-item">
+                <div class="container">
+                    <div class="item-field">
+                        @item.Title
+                    </div>
+                    <div class="item-field">
+                        @item.DateTimeCreate.ToString("MM/dd/yyyy")
+                    </div>
+                    <div class="item-field">
+                        @item.IsDone
+                    </div>
+                    <div class="item-field">
+                        @item.DeadLineDate.ToString("MM/dd/yyyy")
+                    </div>
+                    <div class="item-field">
                         <a asp-controller="ToDoItem" asp-action="Remove" asp-route-id="@item.Id">Удалить</a>
+                    </div>
+                    <div class="item-field">
                         <a asp-controller="ToDoItem" asp-action="UpdateItem" asp-route-id="@item.Id">Изменить</a>
-                    </td>
-                </tr>
-            </table>
+                    </div>
+                </div>
+            </div>  
         }
     </div>
 </body>

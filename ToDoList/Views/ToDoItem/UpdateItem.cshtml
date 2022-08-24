@@ -1,18 +1,22 @@
 ﻿@model ToDoList.Models.ToDoItem
 
+@{
+    Layout = null;
+}
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <link href="~/css/All.css" rel="stylesheet" />
     <link href="~/css/site.css" rel="stylesheet" />
 </head>
 <body>
-    <form class="form_input" asp-action="UpdateItem" asp-controller="ToDoItem" method="post" enctype="multipart/form-data">
+    <form class="form_input_edit" asp-action="UpdateItem" asp-controller="ToDoItem" method="post" enctype="multipart/form-data">
         <div asp-validation-summary="All"></div>
         <input asp-for="Id" type="hidden" />
         <input asp-for="Title" />
         <span asp-validation-for="Title"></span>
-        <button class="btn_sbmt" type="submit">
-            <i class="fa-solid fa-plus"></i>
+        <button class="edit_btn_sbmt" type="submit">
+            <i class="fa-solid fa-check"></i>
         </button>
     </form>
 </body>
