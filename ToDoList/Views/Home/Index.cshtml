@@ -2,33 +2,38 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+    <script src="https://code.iconify.design/3/3.0.0/iconify.min.js"></script>
 </head>
 <body>
-    <div class="block-items">
+    <div id="block_list">
         @foreach (var item in Model)
         {
-            <div class="list-item">
-                <div class="container">
-                    <div class="item-field">
-                        @item.Title
-                    </div>
-                    <div class="item-field">
-                        @item.DateTimeCreate.ToString("MM/dd/yyyy")
-                    </div>
-                    <div class="item-field">
-                        @item.IsDone
-                    </div>
-                    <div class="item-field">
-                        @item.DeadLineDate.ToString("MM/dd/yyyy")
-                    </div>
-                    <div class="item-field">
-                        <a asp-controller="ToDoItem" asp-action="Remove" asp-route-id="@item.Id">Удалить</a>
-                    </div>
-                    <div class="item-field">
-                        <a asp-controller="ToDoItem" asp-action="UpdateItem" asp-route-id="@item.Id">Изменить</a>
-                    </div>
+        <div id="container">
+            <div class="block-desc">
+                <div class="item-title">
+                    @item.Title
                 </div>
-            </div>  
+                <div class="item-deadline">
+                    <span>Завершить до </span>@item.DeadLineDate.ToString("MM/dd/yyyy")
+                </div>
+            </div>
+            <div class="block-btn">
+                <div class="item-edit">
+                    <a asp-controller="ToDoItem" asp-action="UpdateItem" asp-route-id="@item.Id">
+                        <span class="iconify" data-icon="ant-design:edit-outlined" style="font-size: 25px; color: darkgrey"></span>
+                    </a>
+                </div>
+                <div class="item-delete">
+                    <a asp-controller="ToDoItem" asp-action="Remove" asp-route-id="@item.Id">
+                        <span class="iconify" data-icon="el:remove" style="font-size: 20px; color: darkgrey"></span>
+                    </a>
+                </div>
+                <div class="item-date-create">
+                    @item.DateTimeCreate.ToString("dd/MM/yyyy")
+                </div>
+            </div>
+            
+        </div>
         }
     </div>
 </body>

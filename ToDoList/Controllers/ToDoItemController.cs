@@ -56,6 +56,7 @@ namespace ToDoList.Controllers
         public async Task<IActionResult> Remove(int id)
         {
             _repo.DeleteItem(id);
+            _repo.GetItem(id).IsDone = true;
             await _repo.SaveChangesAsync();
             return RedirectToAction("Index", "Home");
         }
