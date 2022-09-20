@@ -1,0 +1,42 @@
+﻿@model IEnumerable<ToDoList.Models.ToDoItem>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/css/All.css" rel="stylesheet" />
+    <title></title>
+</head>
+<body>
+    <div id="block_list">
+        @foreach (var item in Model)
+        {
+            if (item.IsDone == true)
+            {
+                <div id="container">
+                    <div class="block-desc-done">
+                        <div class="item-title-done">
+                            @item.Title
+                        </div>
+                        <div class="item-deadline-done">
+                            <span>Завершить до </span>@item.DeadLineDate.ToString("MM/dd/yyyy")
+                        </div>
+                    </div>
+                    <h1>DONE</h1>
+                    <div class="block-btn-done">
+                        <div class="item-date-create">
+                            @item.DateTimeCreate.ToString("dd/MM/yyyy")
+                        </div>
+                    </div>
+                </div>
+            }
+            else
+            {
+                continue;
+            }
+        }
+    </div>
+</body>
+</html>
+
+

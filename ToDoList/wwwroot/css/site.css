@@ -7,10 +7,12 @@
     height: 100vh;
     
 }
-/** {
-    margin: 0;
-    box-sizing: border-box;
-}*/
+h1 {
+    color: red;
+    transform: rotate(45deg);
+    margin-top: -15px;
+    float: right;
+}
 
 /*title*/
 .block_title {
@@ -109,4 +111,10 @@
 }
 
 
+/*Done items*/
 
+h1 {
+    color: red;
+    z-index: 1500;
+    transform: rotate(45deg);
+}

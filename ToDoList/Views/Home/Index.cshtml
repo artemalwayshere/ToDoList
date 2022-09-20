@@ -5,35 +5,42 @@
     <script src="https://code.iconify.design/3/3.0.0/iconify.min.js"></script>
 </head>
 <body>
+    <a asp-controller="ToDoDoneItem" asp-action="Index">Завершенные задачи</a>
     <div id="block_list">
         @foreach (var item in Model)
         {
-        <div id="container">
-            <div class="block-desc">
-                <div class="item-title">
-                    @item.Title
+            if (item.IsDone == false)
+            {
+                <div id="container">
+                    <div class="block-desc">
+                        <div class="item-title">
+                            @item.Title
+                        </div>
+                        <div class="item-deadline">
+                            <span>Завершить до </span>@item.DeadLineDate.ToString("MM/dd/yyyy")
+                        </div>
+                    </div>
+                    <div class="block-btn">
+                        <div class="item-edit">
+                            <a asp-controller="ToDoItem" asp-action="UpdateItem" asp-route-id="@item.Id">
+                                <span class="iconify" data-icon="ant-design:edit-outlined" style="font-size: 25px; color: darkgrey"></span>
+                            </a>
+                        </div>
+                        <div class="item-delete">
+                            <a asp-controller="ToDoItem" asp-action="Remove" asp-route-id="@item.Id">
+                                <span class="iconify" data-icon="el:remove" style="font-size: 20px; color: darkgrey"></span>
+                            </a>
+                        </div>
+                        <div class="item-date-create">
+                            @item.DateTimeCreate.ToString("dd/MM/yyyy")
+                        </div>
+                    </div>
                 </div>
-                <div class="item-deadline">
-                    <span>Завершить до </span>@item.DeadLineDate.ToString("MM/dd/yyyy")
-                </div>
-            </div>
-            <div class="block-btn">
-                <div class="item-edit">
-                    <a asp-controller="ToDoItem" asp-action="UpdateItem" asp-route-id="@item.Id">
-                        <span class="iconify" data-icon="ant-design:edit-outlined" style="font-size: 25px; color: darkgrey"></span>
-                    </a>
-                </div>
-                <div class="item-delete">
-                    <a asp-controller="ToDoItem" asp-action="Remove" asp-route-id="@item.Id">
-                        <span class="iconify" data-icon="el:remove" style="font-size: 20px; color: darkgrey"></span>
-                    </a>
-                </div>
-                <div class="item-date-create">
-                    @item.DateTimeCreate.ToString("dd/MM/yyyy")
-                </div>
-            </div>
-            
-        </div>
+            }
+            else
+            {
+                continue;
+            }
         }
     </div>
 </body>
