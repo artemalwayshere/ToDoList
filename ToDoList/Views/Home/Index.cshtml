@@ -5,11 +5,11 @@
     <script src="https://code.iconify.design/3/3.0.0/iconify.min.js"></script>
 </head>
 <body>
-    <a asp-controller="ToDoDoneItem" asp-action="Index">Завершенные задачи</a>
+    <a id="Done-tasks" asp-controller="ToDoDoneItem" asp-action="Index">Завершенные таски</a>
     <div id="block_list">
         @foreach (var item in Model)
         {
-            if (item.IsDone == false)
+            if (item.IsDone == false) 
             {
                 <div id="container">
                     <div class="block-desc">
