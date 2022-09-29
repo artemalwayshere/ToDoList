@@ -27,6 +27,7 @@ h1 {
 .form_input{
     height: 40px;
     color: white;
+    margin-bottom: 25px;
 }
 
     .form_input input {
@@ -36,6 +37,7 @@ h1 {
 
 .form_input_edit input{
     margin-top: 170px;
+    margin-bottom: 25px;
     height: 40px;
     color: white;
     width: 900px;
@@ -76,11 +78,12 @@ h1 {
     border-radius: 10px;
     background: #d04d4d;
     border: 1px solid #d04d4d;
+    margin-top: 25px;
 }
 
-#container{
+#container {
     border-radius: 10px;
-    border:  none;
+    border: none;
     margin: 10px;
     background: white;
     height: 100px;
@@ -120,9 +123,13 @@ h1 {
     transform: rotate(45deg);
 }
 
-#Done-tasks{
-    border: 1px solid;
-    font-size: 25px;
+#Done-tasks {
+    border: none;
+    border-color: brown;
+    border-radius: 10PX;
+    font-size: 20px;
     color: white;
     text-decoration: none;
+    padding: 10px;
+    background: #d04d4d;
 }
