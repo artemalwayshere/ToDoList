@@ -31,7 +31,8 @@ namespace ToDoList.Controllers
             {
                 Id = item.Id,
                 Title = item.Title,
-                Description = item.Description
+                Description = item.Description,
+                DeadLineDate = item.DeadLineDate
             };
 
             if (toDoitem.Id < 1)

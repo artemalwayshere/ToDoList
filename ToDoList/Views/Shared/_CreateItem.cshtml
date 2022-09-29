@@ -9,8 +9,10 @@
         <form class="form_input" asp-action="CreateItem" asp-controller="ToDoItem" method="post" enctype="multipart/form-data">
             <div asp-validation-summary="All"></div>
             <input asp-for="Id" type="hidden" />
-            <input asp-for="Title" />
+            <input asp-for="Title"/>
             <span asp-validation-for="Title"></span>
+            <input id="dead-line" asp-for="DeadLineDate" type="date"/>
+            <span asp-validation-for="DeadLineDate"></span>
             <button class="btn_sbmt" type="submit">
                 <i class="fa-solid fa-plus"></i>
             </button>

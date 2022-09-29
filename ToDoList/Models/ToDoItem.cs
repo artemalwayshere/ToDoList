@@ -16,6 +16,6 @@ namespace ToDoList.Models
         public string Description { get; set; }
         public DateTime DateTimeCreate { get; set; } = DateTime.Now;
         public bool IsDone { get; set; } = false;
-        public DateTime DeadLineDate { get; set; }
+        public DateTime DeadLineDate { get; set; } = DateTime.Now;
     }
 }

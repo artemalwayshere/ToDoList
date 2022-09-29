@@ -32,15 +32,19 @@ h1 {
 
     .form_input input {
         height: 30px;
-        width: 900px;
+        width: 800px;
     }
+
+#dead-line{
+    width: 100px;
+}
 
 .form_input_edit input{
     margin-top: 170px;
     margin-bottom: 25px;
     height: 40px;
     color: white;
-    width: 900px;
+    width: 600px;
 }
 
     .form_input_edit input {
@@ -54,6 +58,7 @@ h1 {
     border: none;
     cursor:pointer;
     vertical-align:middle;
+    float: right;
 }
 
 .edit_btn_sbmt {
