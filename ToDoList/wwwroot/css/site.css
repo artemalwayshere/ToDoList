@@ -128,7 +128,7 @@ h1 {
     transform: rotate(45deg);
 }
 
-#Done-tasks {
+#button {
     border: none;
     border-color: brown;
     border-radius: 10PX;
@@ -137,4 +137,5 @@ h1 {
     text-decoration: none;
     padding: 10px;
     background: #d04d4d;
+    width: 250px;
 }

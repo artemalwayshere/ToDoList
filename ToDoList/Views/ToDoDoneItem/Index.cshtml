@@ -1,18 +1,15 @@
 ﻿@model IEnumerable<ToDoList.Models.ToDoItem>
 
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <link href="~/css/site.css" rel="stylesheet" />
-    <link href="~/css/All.css" rel="stylesheet" />
-    <title></title>
+    <script src="https://code.iconify.design/3/3.0.0/iconify.min.js"></script>
 </head>
 <body>
-    <a id="Done-tasks" asp-controller="Home" asp-action="Index">На главную</a>
+    <a id="button" asp-controller="Home" asp-action="Index">Активные таски</a>
     <div id="block_list">
         @foreach (var item in Model)
         {
-            if (item.IsDone == true)
+            if (item.IsDone == true) 
             {
                 <div id="container">
                     <div class="block-desc-done">
@@ -31,13 +28,9 @@
                     </div>
                 </div>
             }
-            else
-            {
-                continue;
-            }
+            else continue;
         }
     </div>
 </body>
 </html>
-
 

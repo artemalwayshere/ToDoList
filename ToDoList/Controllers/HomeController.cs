@@ -20,9 +20,25 @@ namespace ToDoList.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public IActionResult Index(string sortOrder)
         {
+            ViewData["DateSortParam"] = sortOrder == "Date" ? "date_desc" : "Date";
+
             var responseItem = _repo.GetItemList();
+
+            switch (sortOrder)
+            {
+                case "date_desc":
+                    responseItem =  responseItem.OrderBy(i => i.DateTimeCreate);
+                    break;
+                case "Date":
+                    responseItem = responseItem.OrderByDescending(i => i.DateTimeCreate);
+                    break;
+                default:
+                    responseItem = responseItem.OrderBy(s => s.DateTimeCreate);
+                    break;
+            }
+
             return View(responseItem);
         }
     }

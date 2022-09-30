@@ -49,5 +49,10 @@ namespace ToDoList.Data
             }
             return false;
         }
+
+        //public IEnumerable<ToDoItem> GetItemsForDate()
+        //{
+        //    var items = new List<ToDoItem>();
+        //}
     }
 }

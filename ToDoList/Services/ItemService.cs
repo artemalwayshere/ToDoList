@@ -10,17 +10,6 @@ namespace ToDoList.Services
 {
     public class ItemService
     {
-        private readonly IRepository repo; 
 
-        public ItemService(IRepository _repo)
-        {
-            repo = _repo;
-        }
-
-        public IEnumerable<ToDoItem> SortByDate(IRepository repo)
-        {
-            var responseByDate = repo.GetItemList().OrderBy(i => i.DateTimeCreate);
-            return responseByDate;
-        }
     }
 }

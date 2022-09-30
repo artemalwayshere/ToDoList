@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Threading.Tasks;
 using ToDoList.Data;
 using ToDoList.Models;
@@ -89,7 +90,7 @@ namespace ToDoList.Controllers
                 DateTimeCreate = updItem.DateTimeCreate,
             };
 
-            if(item.Id > 0)
+            if (item.Id > 0)
             {
                 _repo.UpdateItem(item);
             }
@@ -98,7 +99,7 @@ namespace ToDoList.Controllers
                 _repo.CreateItem(item);
             }
 
-            if(await _repo.SaveChangesAsync())
+            if (await _repo.SaveChangesAsync())
             {
                 return RedirectToAction("Index", "Home");
             }
@@ -107,6 +108,5 @@ namespace ToDoList.Controllers
                 return View(item);
             }
         }
-        
     }
 }
