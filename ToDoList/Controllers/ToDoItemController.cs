@@ -108,5 +108,12 @@ namespace ToDoList.Controllers
                 return View(item);
             }
         }
+
+        [HttpGet]
+        public IActionResult Index()
+        {
+            var responseItems = _repo.GetItemList().Where(i => i.IsDone == true);
+            return View(responseItems);
+        }
     }
 }

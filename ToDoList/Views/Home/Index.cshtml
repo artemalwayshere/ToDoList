@@ -5,7 +5,7 @@
     <script src="https://code.iconify.design/3/3.0.0/iconify.min.js"></script>
 </head>
 <body>
-    <a id="button" asp-controller="ToDoDoneItem" asp-action="Index">Завершенные таски</a>
+    <a id="button" asp-controller="ToDoItem" asp-action="Index">Завершенные таски</a>
     <a id="button" asp-action="Index" asp-controller="Home" asp-route-sortOrder="@ViewData["DateSortParam"]">@Html.DisplayNameFor(model => model.DateTimeCreate)123</a>
     <div id="block_list">
         @foreach (var item in Model)
