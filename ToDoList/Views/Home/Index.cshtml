@@ -6,7 +6,7 @@
 </head>
 <body>
     <a id="button" asp-controller="ToDoItem" asp-action="Index">Завершенные таски</a>
-    <a id="button" asp-action="Index" asp-controller="Home" asp-route-sortOrder="@ViewData["DateSortParam"]">@Html.DisplayNameFor(model => model.DateTimeCreate)123</a>
+    <a id="button" asp-action="Index" asp-controller="Home" asp-route-sortOrder="@ViewData["DateSortParam"]">Сортировать по дате</a>
     <div id="block_list">
         @foreach (var item in Model)
         {

@@ -12,6 +12,7 @@ namespace ToDoList.Models
         public int Id { get; set; }
 
         [StringLength(255, MinimumLength = 3, ErrorMessage = "Длина строки от 4 до 255 знаков")]
+        [Required(ErrorMessage ="Please enter yout task")]
         public string Title { get; set; }
         public string Description { get; set; }
         public DateTime DateTimeCreate { get; set; } = DateTime.Now;
